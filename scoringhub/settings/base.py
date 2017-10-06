@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles'
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'datacore'
+]
 
 INSTALLED_APPS += PROJECT_APPS
 
