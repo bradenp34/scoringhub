@@ -30,7 +30,7 @@ INSTALLED_APPS = [
 ]
 
 PROJECT_APPS = [
-    'datacore'
+    'scoringhub.datacore'
 ]
 
 INSTALLED_APPS += PROJECT_APPS
