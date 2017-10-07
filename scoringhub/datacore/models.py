@@ -28,7 +28,7 @@ class Club(models.Model):
 
 
 class Clubhasshooter(models.Model):
-    clubid = models.ForeignKey(Club, models.DO_NOTHING, db_column='ClubID', primary_key=True)  # Field name made lowercase.
+    clubid = models.ForeignKey(Club, models.DO_NOTHING, db_column='ClubID')  # Field name made lowercase.
     shooterid = models.ForeignKey('Shooter', models.DO_NOTHING, db_column='ShooterID')  # Field name made lowercase.
     membersince = models.DateTimeField(db_column='MemberSince', blank=True, null=True)  # Field name made lowercase.
     isactive = models.SmallIntegerField(db_column='IsActive', blank=True, null=True)  # Field name made lowercase.
@@ -73,7 +73,7 @@ class League(models.Model):
 
 
 class Leaguehasgame(models.Model):
-    leagueid = models.ForeignKey(League, models.DO_NOTHING, db_column='LeagueID', primary_key=True)  # Field name made lowercase.
+    leagueid = models.ForeignKey(League, models.DO_NOTHING, db_column='LeagueID')  # Field name made lowercase.
     gameid = models.ForeignKey(Game, models.DO_NOTHING, db_column='GameID')  # Field name made lowercase.
     rounds = models.IntegerField(db_column='Rounds', blank=True, null=True)  # Field name made lowercase.
 
@@ -84,7 +84,7 @@ class Leaguehasgame(models.Model):
 
 
 class Leaguehasteam(models.Model):
-    leagueid = models.ForeignKey(League, models.DO_NOTHING, db_column='LeagueID', primary_key=True)  # Field name made lowercase.
+    leagueid = models.ForeignKey(League, models.DO_NOTHING, db_column='LeagueID')  # Field name made lowercase.
     teamid = models.ForeignKey('Team', models.DO_NOTHING, db_column='TeamID')  # Field name made lowercase.
 
     class Meta:
@@ -113,7 +113,7 @@ class Role(models.Model):
 
 
 class Rolehaspageaccess(models.Model):
-    role = models.ForeignKey(Role, models.DO_NOTHING, db_column='Role_ID', primary_key=True)  # Field name made lowercase.
+    role = models.ForeignKey(Role, models.DO_NOTHING, db_column='Role_ID')  # Field name made lowercase.
     pageaccess = models.ForeignKey(Pageaccess, models.DO_NOTHING, db_column='PageAccess_ID')  # Field name made lowercase.
 
     class Meta:
@@ -169,7 +169,7 @@ class Shooter(models.Model):
 
 
 class Shooterhasrole(models.Model):
-    shooterid = models.ForeignKey(Shooter, models.DO_NOTHING, db_column='ShooterID', primary_key=True)  # Field name made lowercase.
+    shooterid = models.ForeignKey(Shooter, models.DO_NOTHING, db_column='ShooterID')  # Field name made lowercase.
     roleid = models.ForeignKey(Role, models.DO_NOTHING, db_column='RoleID')  # Field name made lowercase.
 
     class Meta:
@@ -179,7 +179,7 @@ class Shooterhasrole(models.Model):
 
 
 class Shooterhasround(models.Model):
-    shooterid = models.ForeignKey(Shooter, models.DO_NOTHING, db_column='ShooterID', primary_key=True)  # Field name made lowercase.
+    shooterid = models.ForeignKey(Shooter, models.DO_NOTHING, db_column='ShooterID')  # Field name made lowercase.
     roundid = models.ForeignKey(Round, models.DO_NOTHING, db_column='RoundID')  # Field name made lowercase.
 
     class Meta:
@@ -224,7 +224,7 @@ class Team(models.Model):
 
 
 class Teamhasshooter(models.Model):
-    teamid = models.ForeignKey(Team, models.DO_NOTHING, db_column='TeamID', primary_key=True)  # Field name made lowercase.
+    teamid = models.ForeignKey(Team, models.DO_NOTHING, db_column='TeamID')  # Field name made lowercase.
     shooterid = models.ForeignKey(Shooter, models.DO_NOTHING, db_column='ShooterID')  # Field name made lowercase.
 
     class Meta:
